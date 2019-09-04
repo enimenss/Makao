@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:test="clr-namespace:Makao"
+             xmlns:controls="clr-namespace:Makao.Controls"
+             mc:Ignorable="d"
+             x:Class="Makao.AppShell"
+            FlyoutIcon="dog.png"
+        CurrentItem="{x:Reference ani1}">
+        
+
+    <!--<Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>-->
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black"
+              HeightRequest="200">
+                <Image Aspect="AspectFill"
+                   Source="xamarinstore.jpg"
+                   Opacity="0.6" />
+                <Label Text="Animals"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+
+
+    <!--<Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition Width="0.8*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>-->
+ 
+    <FlyoutItem Title="Animals"
+                FlyoutDisplayOptions="AsSingleItem"
+                Icon="dog.png">
+        <Tab Title="Domestic"
+             Icon="dog.png">
+            <ShellContent Title="Cats"
+                          Icon="cat.png">
+                <test:MainPage />
+            </ShellContent>
+            <ShellContent Title="Dogs"
+                          Icon="dog.png">
+                <test:MainPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Monkeys"
+             Icon="buldog.jpg">
+            <ShellContent Title="Monkeys"
+                      Icon="buldog.jpg">
+                <test:MainPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+
+    <FlyoutItem Title="Animals1"
+                x:Name="ani1"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Domestic1"
+             Icon="dog.png">
+            <ShellContent Title="Cats"
+                          Icon="cat.png">
+                <test:MainPage />
+            </ShellContent>
+            <ShellContent Title="Dogs"
+                          Icon="dog.png">
+                <test:MainPage />
+            </ShellContent>
+        </Tab>
+        <Tab Title="Monkeys1"
+             Icon="buldog.jpg">
+            <ShellContent Title="Monkeys"
+                      Icon="buldog.jpg">
+                <test:MainPage />
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+</Shell>
